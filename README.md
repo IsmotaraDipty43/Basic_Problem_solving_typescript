@@ -91,11 +91,41 @@ That’s type inference at work.
 ## Why is Type Inference Helpful?
 
 ### 1. Less Code, Same Safety
+```typescript
+let isLoggedIn = true;  // Inferred as boolean
+TypeScript knows the type, so you don’t need to write:
+Example:
+let isLoggedIn: boolean = true;
+This keeps your code clean and readable.
+```
 ### 2. Helps Catch Errors Early
+```typescript
+Since the compiler knows the types, it can stop from doing incorrect things.
+Example:
+let count = 100;
+count = "a lot";  //  Error: Type 'string' is not assignable to type 'number'
+Even though we didn’t specify count as a number, TypeScript inferred it and caught the mistake.
+```
 ### 3. Smart IntelliSense and Auto-complete
+```typescript
+When TypeScript infers types, your editor (like VS Code) gets smarter. It can offer auto-complete suggestions, show type hints, and highlight errors — all without manual annotations.
+Example:
+let user = {
+  name: "Bob",
+  age: 28
+};
+
+// TypeScript infers: { name: string; age: number }
+
+user.age.toFixed();  // Allowed because age is a number
+user.name.toFixed(); // Error: toFixed does not exist on type 'string'
+```
 ### 4. Encourages Cleaner Code
-
-
+```typescript
+We can avoid cluttering our code with repetitive type annotations while still having full type protection.
+const numbers = [1, 2, 3];  // Type inferred: number[]
+No need to write: const numbers: number[] = [1, 2, 3];
+``
 ## Summary
 
 TypeScript significantly improves code quality and maintainability by offering a strong typing system, better tooling, static type checking, and more predictable refactoring processes. It ensures that developers can catch errors early, work more efficiently, and keep their codebases clean and scalable, especially in large projects.
