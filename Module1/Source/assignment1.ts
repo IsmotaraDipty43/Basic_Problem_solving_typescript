@@ -55,9 +55,6 @@ class Vehicle {
   }
 
 
-
-
-
 interface Product {
     name: string;
     price: number;
@@ -69,12 +66,7 @@ interface Product {
     }
     return products.reduce((max, product) => (product.price > max.price ? product : max), products[0]);
   }
-  const products = [
-    { name: "Pen", price: 10 },
-    { name: "Notebook", price: 25 },
-    { name: "Bag", price: 50 }
-  ];
-  
+
 
 
 enum Day {
